@@ -1,6 +1,6 @@
 # Hello World MCP Server
 
-プロダクションレベルのアーキテクチャを持つMCPサーバーのサンプル実装です。
+割としっかりめに作ったMCPサーバーのサンプル実装です。
 
 ## セットアップ
 
@@ -9,6 +9,13 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python src/server.py
+```
+## Pythonパスを確認
+```
+echo $PYTHONPATH
+
+# プロジェクトルートをPythonパスに追加
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 ```
 
 ## Claude Desktop設定
@@ -20,7 +27,10 @@ python src/server.py
   "mcpServers": {
     "hello-world": {
       "command": "/absolute/path/to/venv/bin/python",
-      "args": ["/absolute/path/to/src/server.py"]
+      "args": ["/absolute/path/to/src/server.py"],
+      "env": {
+      "PYTHONPATH": "/absolute/path/to/"
+        }
     }
   }
 }
