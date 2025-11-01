@@ -8,6 +8,7 @@
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+chmod +x server.py
 python src/server.py
 ```
 ## Pythonパスを確認
