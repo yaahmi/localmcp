@@ -3,12 +3,13 @@
 FastMCPサーバーのSSE実装版です
 
 ## セットアップ
-
+```
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
+```
 ## 従来のHTTP vs SSE
+```
 【従来のHTTP】
 Client ─────Request────────> Server
 Client <────Response──────── Server
@@ -26,6 +27,7 @@ Client <──────┤ ストリーム
 Client <──────┤ (継続)
 Client <──────┘
 （シンプルで軽量、サーバー→クライアントの一方向）
+```
 SSEの特徴
 ✅ シンプル: 標準HTTPの上で動作
 ✅ 軽量: WebSocketより低オーバーヘッド
@@ -58,7 +60,7 @@ Claude Desktop
 │  - POST /messages → 処理                 │
 │  - SSE stream → レスポンス送信            │
 └─────────────────────────────────────────┘
-
+```
 ## SSE接続の正しい流れ
 ```
 クライアント                    サーバー
@@ -82,8 +84,9 @@ Claude Desktop
     │                              │
     │ (同じ接続を維持)             │
 
+```
 ## Claude Desktop設定
-
+```
 {
   "mcpServers": {
     "hello-world-http": {
@@ -96,5 +99,5 @@ Claude Desktop
     }
   }
 }
-
+```
 
